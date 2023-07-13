@@ -1,0 +1,108 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex; /* 追加 */
+    justify-content: space-between; /* 追加 */
+    align-items: center; /* 追加 */
+}
+
+.header-title h1 {
+    margin: 0;
+}
+
+.header-list ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: right;
+}
+
+.header-list ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.header-list ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.search-box {
+    width: 30%; /* 修正 */
+    padding: 20px;
+    float: left;
+    box-sizing: border-box; /* 追加 */
+}
+
+.list-box {
+    width: 70%; /* 修正 */
+    padding: 20px;
+    float: left;
+    box-sizing: border-box; /* 追加 */
+}
+
+.search-box h2,
+.list-box h2 {
+    margin: 0;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    border-radius: 5px;
+}
+
+.search-wrapper {
+    margin-top: 20px;
+}
+
+.search-title, .search-day, .search-status, .search-button {
+    margin-bottom: 10px;
+}
+
+.search-title label, .search-day label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.search-status label {
+    display: inline-block; /* インラインブロック要素に変更 */
+    margin-right: 10px; /* 必要な間隔を指定 */
+}
+
+.search-button button {
+    padding: 5px 10px;
+}
+
+.list-wrapper {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 5px 10px;
+}
+

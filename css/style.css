@@ -1,0 +1,50 @@
+.search-box {
+    float: left;
+}
+
+.header-title {
+    float: left;
+    margin: auto 0;
+}
+
+.header-title h1 {
+    text-align: center;
+}
+
+.header-list {
+    /* float: right; */
+    padding-right: 5rem;
+    margin-left: auto;
+
+}
+
+.header-list a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+header {
+    background-color: rgba(83, 83, 85, 0.274);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+.search-box {
+    padding-top: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    
+}
+
+.list-box {
+    padding-top: 5rem;
+   
+}
