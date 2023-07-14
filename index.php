@@ -1,3 +1,21 @@
+<?php
+    require_once __DIR__ . '/config/setting.php';
+    $array_status = [1 => "未着手", 2 => "進行中", 3 => "完了"];
+    try{
+        $pdo = new PDO(DSN, USER, PASSWORD);
+        $pdo->exec('SET NAMES utf8');
+        $stmt = $pdo->prepare('SELECT id, title, created_at, status_id, memo FROM task');
+        //プリペアドステートメントを実行する 
+        $stmt->execute();
+        //結果の全件を連想配列で取得する
+        $tasks = $stmt->fetchAll();
+    }catch (PDOException $e){
+        print('Error:'.$e->getMessage());
+        die();
+    }
+    //データベースを切断する
+    $pdo = null;
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,29 +32,6 @@
         window.open(url, '_blank', 'width=800,height=600');
         } 
     </script>
-    <?php
-        $dsn = 'mysql:dbname=todo;host=localhost;';
-        $user = 'testuser';
-        $password = 'sa';
-        $array_status = [1 => "未着手", 2 => "進行中", 3 => "完了"];
-        try{
-            //PDOオブジェクトを生成する
-            $pdo = new PDO($dsn, $user, $password);
-            //UTF8エンコーディング
-            $pdo->exec('SET NAMES utf8');
-            //プリペアドステートメントを生成する
-            $stmt = $pdo->prepare('SELECT id, title, created_at, status_id, memo FROM task');
-            //プリペアドステートメントを実行する 
-            $stmt->execute();
-            //結果の全件を連想配列で取得する
-            $results = $stmt->fetchAll();
-        }catch (PDOException $e){
-            print('Error:'.$e->getMessage());
-            die();
-        }
-        //データベースを切断する
-        $pdo = null;
-    ?>
 </head>
 <body>
     <header>
@@ -89,9 +84,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($results as $row): ?>
+                        <?php foreach ($tasks as $row): ?>
                             <tr>
-                                <td><button type="">詳細</button></td>
+                                <td><button type="button" onclick="window.openNewWindow(event, './detail.php?id=<?php echo $row['id']; ?>')">詳細</button></td>
                                 <td><input type="checkbox"></td>
                                 <td><?php echo $row['title']; ?></td>
                                 <td><?php echo date('Y-m-d', strtotime($row['created_at'])); ?></td>

@@ -40,14 +40,14 @@ main {
 }
 
 .search-box {
-    width: 30%; /* 修正 */
+    width: 40%; /* 修正 */
     padding: 20px;
     float: left;
     box-sizing: border-box; /* 追加 */
 }
 
 .list-box {
-    width: 70%; /* 修正 */
+    width: 60%; /* 修正 */
     padding: 20px;
     float: left;
     box-sizing: border-box; /* 追加 */
@@ -70,10 +70,12 @@ main {
     margin-bottom: 10px;
 }
 
+
 .search-title label, .search-day label {
     display: block;
     margin-bottom: 5px;
 }
+
 
 .search-status label {
     display: inline-block; /* インラインブロック要素に変更 */

@@ -8,7 +8,7 @@
 <body>
     <div>
         新規登録画面
-        <form action="taskSubmitValidate.php" method="POST">
+        <form action="formSubmit.php" method="POST">
         <div>
             <label>タイトル:
                 <input type="text" name="req_title">

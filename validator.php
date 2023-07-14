@@ -1,7 +1,7 @@
 <?php
     //バリデーションクラスを定義する
     class Validator {
-        //引数が$dataで、返り値が$errorsのvalidate関数を定義する
+        //引数が$dataで、戻り値が$errorsのvalidate関数を定義する
         public function validate($data) {
             //配列$errorsを定義する
             $errors = [];

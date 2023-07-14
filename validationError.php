@@ -1,16 +1,8 @@
 <?php 
-    //セッション開始
+    //2023/07/14に修正しました
     session_start();
-
-    if (isset($_SESSION['errors'])) {
-        //変数がセットされており、その値がNULLでないとき
-        //$errorsに$_SESSION['errors']を格納する
-        $errors = $_SESSION['errors'];
-        //$_SESSION['errors']を削除する
-        unset($_SESSION['errors']);
-    } else {
-        $errors = array();
-    }
+    $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
+    unset($_SESSION['errors']);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
